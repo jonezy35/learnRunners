@@ -6,7 +6,7 @@
 
   tasks:
     - name: whoami
-      ansible.builtin.command: "whoami"
+      ansible.builtin.command: "ip a"
       register: iamwho
 
     - name: debug
