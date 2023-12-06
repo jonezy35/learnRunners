@@ -1,13 +1,9 @@
 --- 
 - name: basic
   hosts: all
-  gather_facts: false
+  gather_facts: true
 
   tasks:
-    - name: whoami
-      ansible.builtin.command: "ip a"
-      register: iamwho
-
     - name: debug
       ansible.builtin.debug: 
-        var: iamwho
+        var: ansible_host
