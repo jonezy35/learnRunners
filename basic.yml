@@ -6,4 +6,4 @@
   tasks:
     - name: debug
       ansible.builtin.debug: 
-        var: ansible_host
+        var: ansible_os_family
