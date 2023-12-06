@@ -2,10 +2,10 @@ all:
   children:
     Homelab:
       hosts:
-        local:
-          ansible_host: 10.10.10.3
-          ansible_user: jonezy
-          ansible_ssh_private_key_file: ~/.ssh/id_rsa
+        # local:
+        #   ansible_host: 10.10.10.3
+        #   ansible_user: jonezy
+        #   ansible_ssh_private_key_file: ~/.ssh/id_rsa
         remote:
           ansible_host: 10.10.10.75
           ansible_user: jonezy
