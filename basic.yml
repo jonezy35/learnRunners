@@ -1,0 +1,14 @@
+--- 
+- name: basic
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: whoami
+      ansible.builtin.command: "whoami"
+      register: iamwho
+
+    - name: debug
+      ansible.builtin.debug: 
+        var: iamwho
