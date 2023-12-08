@@ -1,9 +1,9 @@
-name: firstWorkflow
-run-name: First Workflow
+name: Azure-CLI-Install
+run-name: Azure CLI Install
 on: 
   workflow_dispatch:
 jobs:
-  firstWorkflowFirstJob:
+  AzureCLIjob:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
