@@ -1,0 +1,28 @@
+---
+- name: Install Azure CLI
+  hosts: localhost
+  connection: local
+  gather_facts: true
+
+  tasks: 
+    - name: Download Azure CLI script
+      ansible.builtin.command:  curl -sL https://aka.ms/InstallAzureCLIDeb -o /tmp/azurecliinstall.sh
+      become: true
+
+    - name: Run Azure CLI script in Kali
+      ansible.builtin.script: /tmp/azurecliinstall.sh
+      environment:
+        DIST_CODE: jessie
+      become: true
+      register: output
+      when: ansible_facts.distribution == "Kali"
+
+    - name: Run Azure CLI script in Ubuntu
+      ansible.builtin.script: /tmp/azurecliinstall.sh
+      become: true
+      register: output
+      when: ansible_facts.distribution == "Ubuntu"
+    
+    - name: see output
+      ansible.builtin.debug: 
+        var: output

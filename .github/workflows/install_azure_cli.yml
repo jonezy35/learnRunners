@@ -1,0 +1,10 @@
+name: firstWorkflow
+run-name: First Workflow
+on: 
+  workflow_dispatch:
+jobs:
+  firstWorkflowFirstJob:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - run: ansible-playbook play-install-azure-cli.yml
